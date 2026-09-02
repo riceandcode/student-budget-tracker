@@ -37,9 +37,20 @@ document.getElementById('transaction-form').addEventListener('submit', (e) => {
 });
 
 function deleteTx(id) {
-    transactions = transactions.filter(t => t.id !== id);
-    save();
+    if (confirm('Are you sure you want to delete this transaction?')) {
+        transactions = transactions.filter(t => t.id !== id);
+        save();
+    }
 }
+
+// Clear All Data
+document.getElementById('clear-data-btn').addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear ALL data? This cannot be undone.')) {
+        transactions = [];
+        localStorage.removeItem('expenses');
+        render();
+    }
+});
 
 // Initialize/Update Chart
 function updateChart() {

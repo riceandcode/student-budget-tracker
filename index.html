@@ -1,67 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker | Notion Pro</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div class="app-container">
-        <header>
-            <h1>Monthly Overview</h1>
-            <button id="add-btn" class="primary-btn">+ Add Transaction</button>
-        </header>
-
-        <section class="dashboard">
-            <div class="card summary">
-                <h3>Budget Status</h3>
-                <div id="budget-progress-container">
-                    <p id="budget-text">₹0 / ₹0</p>
-                    <div class="progress-bar"><div id="progress-fill"></div></div>
-                </div>
-
-                <div class="budget-settings" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 10px;">
-                    <small>Update Monthly Budget</small>
-                    <div class="budget-input-group" style="display: flex; gap: 10px; margin-top: 8px;">
-                        <input type="number" id="budget-input" placeholder="New Limit (₹)" style="padding: 5px; border: 1px solid var(--border); border-radius: 4px;">
-                        <button id="set-budget-btn" class="primary-btn" style="padding: 5px 10px;">Update</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card chart-container">
-                <canvas id="expenseChart"></canvas>
-            </div>
-        </section>
-
-        <section class="card history">
-            <h3>Recent Transactions</h3>
-            <table id="transaction-table">
-                <thead><tr><th>Subject</th><th>Category</th><th>Amount</th><th>Action</th></tr></thead>
-                <tbody id="transaction-body"></tbody>
-            </table>
-        </section>
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal hidden">
-        <div class="modal-content">
-            <form id="transaction-form">
-                <input type="text" id="subject" placeholder="Subject" required>
-                <select id="category">
-                    <option value="Food">Food</option>
-                    <option value="Transport">Transport</option>
-                    <option value="Housing">Housing</option>
-                    <option value="Shopping">Shopping</option>
-                </select>
-                <input type="number" id="amount" placeholder="Amount (₹)" required>
-                <button type="submit" class="primary-btn">Save</button>
-                <button type="button" id="close-modal" class="secondary-btn">Cancel</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>expense-tracker</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
